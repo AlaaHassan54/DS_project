@@ -1,0 +1,20 @@
+
+{
+  "version": "2.0.0",
+  "tasks": [
+    {
+      "label": "build",
+      "type": "shell",
+      "command": "New-Item -ItemType Directory -Force build | Out-Null; $files = Get-ChildItem src -Recurse -Filter *.cpp | ForEach-Object { $_.FullName }; g++ -std=c++11 -g -Wall -Iinclude $files -o build/main.exe; if ($LASTEXITCODE -ne 0) { exit $LASTEXITCODE }",
+      "options": {
+        "shell": {
+          "executable": "powershell.exe",
+          "args": ["-NoProfile", "-Command"]
+        }
+      },
+      "group": { "kind": "build", "isDefault": true },
+      "problemMatcher": ["$gcc"]
+    }
+  ]
+}
+
