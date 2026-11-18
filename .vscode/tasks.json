@@ -1,23 +1,20 @@
+
 {
   "version": "2.0.0",
   "tasks": [
     {
       "label": "build",
       "type": "shell",
-      "command": "New-Item -ItemType Directory -Force build | Out-Null; g++ -std=c++11 -g -Wall -Iinclude (Get-ChildItem src -Filter *.cpp).FullName -o build/main.exe",
-      "options": { "shell": { "executable": "powershell.exe", "args": ["-NoProfile", "-Command"] } },
+      "command": "New-Item -ItemType Directory -Force build | Out-Null; $files = Get-ChildItem src -Recurse -Filter *.cpp | ForEach-Object { $_.FullName }; g++ -std=c++11 -g -Wall -Iinclude $files -o build/main.exe; if ($LASTEXITCODE -ne 0) { exit $LASTEXITCODE }",
+      "options": {
+        "shell": {
+          "executable": "powershell.exe",
+          "args": ["-NoProfile", "-Command"]
+        }
+      },
       "group": { "kind": "build", "isDefault": true },
       "problemMatcher": ["$gcc"]
     }
-    ,
-    {
-  "label": "run",
-  "type": "shell",
-  "command": ".\\build\\main.exe",
-  "options": { "shell": { "executable": "powershell.exe", "args": ["-NoProfile", "-Command"] } },
-  "dependsOn": "build",
-  "group": { "kind": "test", "isDefault": true },
-  "problemMatcher": []
-}
   ]
 }
+

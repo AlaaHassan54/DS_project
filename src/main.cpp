@@ -1,10 +1,10 @@
 #include <iostream>
 #include "config.h"
 #include <fstream> 
-#include "linkedlist/double_linkedlist.h"
-#include "queue/queue.h"
-#include "tower.h"
-#include "castle.h"
+
+
+
+
 using namespace std;
 
 
@@ -27,7 +27,7 @@ int main()
 
 if (!redirectIO("data/input/input.txt", "data/output/output.txt")) return 1;
 
-    Tower t;
-    Castle c;
+   
+
     return 0;
 }

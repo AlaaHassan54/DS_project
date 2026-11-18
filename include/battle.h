@@ -5,15 +5,15 @@
 #include "castle.h"
 #include "enemy/enemy.h"
 #include "queue/queue.h"
-#incude "linkedlist/double_linkedlist"
+#include "linkedlist/double_linkedlist.h"
 
 class Battle{
 private:
 Castle castle;
-queue<Enemy*>inactive;
+Queue<Enemy*>inactive;
 double_linkedlist<Enemy*>active[4];
-queue<Enemy*>killed;
-killed_count[4];
+Queue<Enemy*>killed;
+int killed_count[4];
 int total_enemies;
 int active_count[4][3];
 int curr_time;
