@@ -19,6 +19,8 @@ int total_shots;
 int ice_shots;
 double total_damage_taken;
 Enemy ** targets;
+Tower(const Tower&);
+Tower& operator=(const Tower&);
 
 public:
 Tower();

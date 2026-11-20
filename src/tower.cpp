@@ -2,8 +2,7 @@
 #include "config.h"
 #include "formulas.h"
 #include "enemy.h"
-
-
+#include <cstdlib>
 
 //implement all these functionality (by Hanaa)
 Tower::Tower() : targets(0), accumulated_ice(0), frozen_until(0),
@@ -56,9 +55,8 @@ void Tower::act(int t , double_linkedlist<Enemy*>& active)
 
 int Tower::pick_targets(int t ,double_linkedlist<Enemy*>& active)
 {
-     int count = 0;
-
-    for (Node<Enemy*>* node = active.get_head(); node != 0; node = node->next) {
+    int count = 0;
+    for (auto* node = active.get_head(); node != 0; node = node->next) {
         Enemy* e = node->item;
         if (!e->is_alive()) continue;
 
@@ -90,7 +88,7 @@ bool Tower::can_fire_ice(int t , const Enemy * enemy)
 {
     if (5 * (ice_shots + 1) > total_shots + 1) return false;
     if (enemy->is_frozen(t)) return false;
-    return (rand() % 100) < ice_chance_percent;
+    return (rand() % 100) < config::ICE_CHANCE_PERCENT;
 }
 
 
@@ -126,9 +124,10 @@ void Tower::take_ice(double ice_amount , int t)
     if (curr_health <= 0 || is_frozen(t)) return;
 
     accumulated_ice = accumulated_ice + ice_amount;
-    if (accumulated_ice >= ice_threshold) {
+    if (accumulated_ice >= config::ICE_THRESHOLD) {
         frozen_until = t + 1;
-        accumulated_ice = 0; 
+        accumulated_ice = 0;
+    }
 
 }
 
