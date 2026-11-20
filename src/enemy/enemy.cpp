@@ -129,3 +129,11 @@ void Enemy::set_state(ENEMY_STATE s){
 
 
 }
+double Enemy::get_power()
+{
+    return power;
+}
+int Enemy::get_distance()
+{
+    return distance;
+}

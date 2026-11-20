@@ -10,6 +10,7 @@
 
 ENEMY_TYPE Freezer::get_type(){
 
+    return FREEZER;
 
 
 }
@@ -18,5 +19,6 @@ ENEMY_TYPE Freezer::get_type(){
 
 void Freezer::do_action(int t , double_linkedlist<Enemy*>&active , Tower&tower){
 
-
+    double ice=ice_per_shot(get_power(),get_distance());
+tower.take_ice(ice,t);
 }
