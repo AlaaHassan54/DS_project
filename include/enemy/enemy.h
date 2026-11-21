@@ -36,8 +36,8 @@ void move(int t);
 void take_damage(double damage_amount , int t);
 void heal(double healing_amount);
 void freeze(int t , int frozen_time);
-bool is_frozen(int t);
-bool is_half_health(int t);
+bool is_frozen(int t) const;
+bool is_half_health();
 bool is_alive();
 bool can_act(int t);
 int get_remaining_reload_time(int t);
@@ -49,7 +49,15 @@ void set_region(REGION r);
 void set_state(ENEMY_STATE s);
 
 
-
+// getters added for the other modules (Fighter/Freezer/Healer, Tower, game loop)
+int get_id();
+int get_arrival_time();
+int get_kill_time();
+double get_power();
+double get_health();
+int get_distance();
+REGION get_region();
+ENEMY_STATE get_state();
 
 };
 #endif
