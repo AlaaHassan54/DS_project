@@ -91,7 +91,7 @@ switch (region_char)
                 return false;
         }
 
-        inactive.dequeu(enemy);
+        inactive.enqueu(enemy);
         total_enemies++;
     }
 
