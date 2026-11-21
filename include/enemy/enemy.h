@@ -47,10 +47,6 @@ int get_kd();
 int get_lt();
 void set_region(REGION r);
 void set_state(ENEMY_STATE s);
-double get_power();
-int get_distance();
-
-
 
 
 };
