@@ -1,5 +1,44 @@
-*.o
+# Visual Studio folders/files
+.vs/
+*.suo
+*.user
+*.userosscache
+*.sln.docstates
+
+# Build output
+[Dd]ebug/
+[Rr]elease/
+x64/
+x86/
+[Bb]in/
+[Oo]bj/
+Debug*/
+Release*/
+
+# C++ build artifacts
 *.obj
+*.o
+*.pdb
+*.ilk
+*.exp
+*.lib
+*.dll
 *.exe
+*.idb
+*.ipch
+*.pch
+*.tlog
+*.log
+*.vcxproj.user
+
+# IntelliSense / browse data
+*.sdf
+*.opensdf
+*.VC.db
+*.VC.VC.opendb
+
+# CMake (if using Open Folder / CMake projects)
+out/
+CMakeSettings.json
 build/
 

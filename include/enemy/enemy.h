@@ -47,6 +47,7 @@ int get_kd();
 int get_lt();
 void set_region(REGION r);
 void set_state(ENEMY_STATE s);
+int get_distance() const { return distance; }
 
 
 // getters added for the other modules (Fighter/Freezer/Healer, Tower, game loop)
