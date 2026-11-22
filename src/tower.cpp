@@ -5,8 +5,8 @@
 #include <cstdlib>
 
 //implement all these functionality (by Hanaa)
-Tower::Tower() : targets(0), accumulated_ice(0), frozen_until(0),
-    total_shots(0), ice_shots(0), total_damage_taken(0), num_targets(0) {}
+Tower::Tower() : accumulated_ice(0), frozen_until(0),
+    total_shots(0), ice_shots(0), total_damage_taken(0), num_targets(0), targets(nullptr) {}
 
 Tower::~Tower(){
     delete[] targets;
