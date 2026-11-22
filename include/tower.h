@@ -18,6 +18,7 @@ int num_targets;
 int total_shots;
 int ice_shots;
 double total_damage_taken;
+Enemy** targets;
 
 public:
 Tower();
