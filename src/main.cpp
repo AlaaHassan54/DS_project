@@ -1,13 +1,10 @@
 #include <iostream>
 #include "config.h"
 #include <fstream> 
-
-
-
+#include <tower.h>
+#include "enums.h"
 
 using namespace std;
-
-
 bool redirectIO(const char* inPath, const char* outPath)
 {
     if (!std::freopen(inPath, "r", stdin)) {
@@ -22,12 +19,12 @@ bool redirectIO(const char* inPath, const char* outPath)
 }
 
 
-int main()
-{
+ int main()
+ {
 
-if (!redirectIO("data/input/input.txt", "data/output/output.txt")) return 1;
+ if (!redirectIO("data/input/input.txt", "data/output/output.txt")) return 1;
 
    
 
-    return 0;
-}
+     return 0;
+ }
