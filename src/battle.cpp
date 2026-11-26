@@ -181,13 +181,8 @@ void Battle::remove_killed(int t)
 
     Enemy* enemy = nullptr;
 
-    // 1 move previously killed enemies into sorted list
-    while (killed.dequeu(enemy))
-    {
-        sorted.insert_sorted(enemy, kill_order_before);
-    }
 
-    // 2  find newly killed enemies.
+    // 1  find newly killed enemies.
     for (int i = 0; i < 4; i++)
     {
         l_node<Enemy*>* current = active[i].get_head();
@@ -217,7 +212,7 @@ void Battle::remove_killed(int t)
         }
     }
 
-    // 3 restore the sorted enemies into killed queue.
+    // 2 restore the sorted enemies into killed queue.
     while (sorted.pop_front(enemy))
     {
         killed.enqueu(enemy);
