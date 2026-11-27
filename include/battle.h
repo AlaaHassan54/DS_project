@@ -7,6 +7,7 @@
 #include "queue/queue.h"
 #include "linkedlist/double_linkedlist.h"
 
+
 class Battle{
 private:
 Castle castle;
@@ -21,9 +22,12 @@ int curr_time;
 
 public:
 Battle();
+
 ~Battle();
 void run(const char *input_file , const char * output_file);
-bool load_input(const char * input_file);
+
+bool load_input(const char* input_file);
+
 void write_output(const char * output_file , GAME_STATE res);
 void activate_arrivals(int t);
 void enemies_act(int t);
